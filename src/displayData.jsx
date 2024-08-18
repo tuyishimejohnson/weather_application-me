@@ -12,7 +12,7 @@ const DisplayData = () => {
     setValue(event.target.value)
   }
 
-  const apiKey = "7cd592558e2f283db4a0b3dd295cddc0"
+  const apiKey = process.env.REACT_APP_API_KEY
   
   const fetchWeatherData = async () => {
 
