@@ -6,6 +6,7 @@ const DisplayData = () => {
 
   const [value, setValue] = useState("")
   const [weatherData, setWeatherData] = useState(null)
+  const [error, setError] = useState(null)
 
   const handleInput = (event) => {
     setValue(event.target.value)
@@ -18,11 +19,9 @@ const DisplayData = () => {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=${apiKey}`
       try {
         const response = await axios.get(url)
-        setWeatherData(response.data)
-        console.log(response.data)
-        
+        setWeatherData(response.data)        
       } catch (error) {
-          console.log(`Error ${error}`)
+          setError(`Failed to fetch some data with error: ${error}`)
       }
     
     }
@@ -56,6 +55,11 @@ const DisplayData = () => {
         <span>Characteristics: {weatherData.weather[0].main}</span>
       </div>
     )}
+
+      <div>
+        <span>{error}</span>
+      </div>
+
         
     </div>
   )
