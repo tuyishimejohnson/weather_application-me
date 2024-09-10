@@ -32,7 +32,7 @@ const DisplayData = () => {
     <div className="w-2/5 m-auto bg-gradient-to-b from-blue-400 to-yellow-200 h-[35rem] my-14 rounded-md">
       <form action="" onSubmit={handleSubmit}>
         <h1 className="text-3xl text-center py-10 font-bold text-white">
-          Weather Application
+          Get Basic Weather information
         </h1>
         <div className="flex justify-center gap-2">
           <input
@@ -46,7 +46,7 @@ const DisplayData = () => {
             type="submit"
             className="bg-gray-600 px-3 py-2 rounded-full text-white"
           >
-            Get weather information
+            Get information
           </button>
         </div>
       </form>
@@ -60,15 +60,18 @@ const DisplayData = () => {
           <span className="font-bold text-5xl text-gray-700 block">
             {(weatherData.main.temp - 273.15).toFixed(2)}&deg;C
           </span>
-          <span className="text-xl">Wind speed: {weatherData.wind.speed}</span>
-          <span>
-            Description:{" "}
-            {weatherData.weather[0].description[0].toUpperCase() +
-              weatherData.weather[0].description.slice(1)}
-          </span>
-
-          <span>Description: {weatherData.weather[0].icon}</span>
-          <span>Characteristics: {weatherData.weather[0].main}</span>
+          <div className="flex flex-col">
+            <span className="text-xl">
+              Wind speed: {weatherData.wind.speed}
+            </span>
+            <span>
+              Description:{" "}
+              {weatherData.weather[0].description[0].toUpperCase() +
+                weatherData.weather[0].description.slice(1)}
+            </span>
+            <span>Description: {weatherData.weather[0].icon}</span>
+            <span>Characteristics: {weatherData.weather[0].main}</span>
+          </div>
         </div>
       )}
 
