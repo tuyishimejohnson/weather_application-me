@@ -37,7 +37,7 @@ const DisplayData = () => {
         <div className="flex justify-center gap-2">
           <input
             type="text"
-            placeholder="Enter a city a city"
+            placeholder="Enter a city"
             value={value}
             onChange={handleInput}
             className="border rounded-full w-1/2 pl-3 placeholder:text-white border-gray-100 bg-transparent text-white focus:outline-none focus:ring-1 focus:ring-gray-200"
